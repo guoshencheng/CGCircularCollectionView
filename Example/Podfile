@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'CGCircularCollectionView_Example', :exclusive => true do
+  pod 'CGCircularCollectionView', :path => '../'
+end
+
+target 'CGCircularCollectionView_Tests', :exclusive => true do
+  pod 'CGCircularCollectionView', :path => '../'
+
+  
+end
