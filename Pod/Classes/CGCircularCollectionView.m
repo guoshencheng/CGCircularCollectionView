@@ -14,8 +14,7 @@ static NSUInteger const ContentMultiplier = 4;
 @interface CGCircularCollectionView ()
 
 @property (nonatomic) BOOL circularImplicitlyDisabled;
-@property (strong, nonatomic) NSIndexPath *historyIndexPath;
-@property (assign, nonatomic) NSInteger historyIndex;
+@property (assign, nonatomic) NSInteger lastItemCount;
 
 @end
 
@@ -64,12 +63,12 @@ static NSUInteger const ContentMultiplier = 4;
 }
 
 - (void)reloadData {
-    CGPoint contentOffset = self.contentOffset;
-    NSInteger index = contentOffset.x / [self collectionViewFlowLayout].itemSize.width;
-    self.historyIndex = _itemCount ? index % _itemCount : 0;
-    NSLog(@"realIndex:%@", @(self.historyIndex));
     [super reloadData];
-    [self makeCenter];
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    [self recenterIfNecessary];
 }
 
 #pragma mark - Accessors
@@ -97,6 +96,13 @@ static NSUInteger const ContentMultiplier = 4;
     }
 }
 
+- (void)setItemCount:(NSUInteger)itemCount {
+    self.lastItemCount = _itemCount;
+    if (_itemCount != itemCount) {
+        _itemCount = itemCount;
+    }
+}
+
 #pragma mark - Public Methods
 
 - (BOOL)circularActive {
@@ -115,7 +121,7 @@ static NSUInteger const ContentMultiplier = 4;
 
 - (NSInteger)collectionView:(CGCircularCollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     NSParameterAssert([collectionView isKindOfClass:[CGCircularCollectionView class]]);
-    _itemCount = [_dataSourceInterceptor.receiver collectionView:collectionView numberOfItemsInSection:section];
+    self.itemCount = [_dataSourceInterceptor.receiver collectionView:collectionView numberOfItemsInSection:section];
     self.circularImplicitlyDisabled = [self disableCircularInternallyBasedOnContentSize];
     return [self circularActive]? _itemCount * ContentMultiplier : _itemCount;
 }
@@ -132,7 +138,6 @@ static NSUInteger const ContentMultiplier = 4;
     if (_delegateRespondsToScrollViewDidScroll) {
         [_delegateInterceptor.receiver scrollViewDidScroll:scrollView];
     }
-    [self recenterIfNecessary];
 }
 
 #pragma mark - Private Methods
@@ -150,23 +155,14 @@ static NSUInteger const ContentMultiplier = 4;
 - (void)recenterIfNecessary {
     if ([self circularActive]) {
         CGPoint currentOffset = self.contentOffset;
-        CGFloat contentCenteredX = (self.contentSize.width - self.bounds.size.width) / 2.0f;
-        CGFloat deltaFromCenter = currentOffset.x - contentCenteredX;
         CGFloat singleContentWidth = self.contentSize.width / ContentMultiplier;
-        if (fabs(deltaFromCenter) >= singleContentWidth ) {
-            CGFloat correction = (deltaFromCenter > 0)? deltaFromCenter - singleContentWidth : deltaFromCenter + singleContentWidth;
-            currentOffset.x = contentCenteredX + correction;
+        if (self.lastItemCount != _itemCount) {
+            NSInteger page = currentOffset.x / ([self collectionViewFlowLayout].itemSize.width * self.lastItemCount);
+            currentOffset.x = page * ([self collectionViewFlowLayout].itemSize.width * (self.itemCount - self.lastItemCount)) + currentOffset.x;
+            self.lastItemCount = _itemCount;
         }
-        self.contentOffset = currentOffset;
-    }
-}
-
-- (void)makeCenter {
-    if ([self circularActive]) {
-        CGPoint currentOffset = self.contentOffset;
         CGFloat contentCenteredX = (self.contentSize.width - self.bounds.size.width) / 2.0f;
         CGFloat deltaFromCenter = currentOffset.x - contentCenteredX;
-        CGFloat singleContentWidth = self.contentSize.width / ContentMultiplier;
         if (fabs(deltaFromCenter) >= singleContentWidth ) {
             CGFloat correction = (deltaFromCenter > 0)? deltaFromCenter - singleContentWidth : deltaFromCenter + singleContentWidth;
             currentOffset.x = contentCenteredX + correction;
