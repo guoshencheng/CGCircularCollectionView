@@ -153,7 +153,7 @@ static NSUInteger const ContentMultiplier = 4;
         CGFloat contentCenteredX = (self.contentSize.width - self.bounds.size.width) / 2.0f;
         CGFloat deltaFromCenter = currentOffset.x - contentCenteredX;
         CGFloat singleContentWidth = self.contentSize.width / ContentMultiplier;
-        if (fabsf(deltaFromCenter) >= singleContentWidth ) {
+        if (fabs(deltaFromCenter) >= singleContentWidth ) {
             CGFloat correction = (deltaFromCenter > 0)? deltaFromCenter - singleContentWidth : deltaFromCenter + singleContentWidth;
             currentOffset.x = contentCenteredX + correction;
         }
@@ -167,7 +167,7 @@ static NSUInteger const ContentMultiplier = 4;
         CGFloat contentCenteredX = (self.contentSize.width - self.bounds.size.width) / 2.0f;
         CGFloat deltaFromCenter = currentOffset.x - contentCenteredX;
         CGFloat singleContentWidth = self.contentSize.width / ContentMultiplier;
-        if (fabsf(deltaFromCenter) >= singleContentWidth ) {
+        if (fabs(deltaFromCenter) >= singleContentWidth ) {
             CGFloat correction = (deltaFromCenter > 0)? deltaFromCenter - singleContentWidth : deltaFromCenter + singleContentWidth;
             currentOffset.x = contentCenteredX + correction;
         }
