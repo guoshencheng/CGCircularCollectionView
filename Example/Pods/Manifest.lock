@@ -1,0 +1,14 @@
+PODS:
+  - CGCircularCollectionView (0.1.0)
+
+DEPENDENCIES:
+  - CGCircularCollectionView (from `../`)
+
+EXTERNAL SOURCES:
+  CGCircularCollectionView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CGCircularCollectionView: 62966339cefab0e6f51d4fa0b7f3a507c9640f40
+
+COCOAPODS: 0.39.0

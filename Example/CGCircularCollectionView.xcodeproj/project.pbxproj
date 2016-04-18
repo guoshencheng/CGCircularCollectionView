@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E199A221CC4ACC10030CDAD /* CGViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E199A211CC4ACC10030CDAD /* CGViewController.xib */; };
+		2E199A241CC4B1C00030CDAD /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E199A231CC4B1C00030CDAD /* Launch Screen.storyboard */; };
+		44E3FBD5060BC1A4A73A2E91 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A257EE1B3EF1CE90669C4971 /* libPods.a */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -15,14 +18,10 @@
 		6003F59E195388D20070C39A /* CGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* CGAppDelegate.m */; };
 		6003F5A7195388D20070C39A /* CGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5A6195388D20070C39A /* CGViewController.m */; };
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
-		6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F5AF195388D20070C39A /* XCTest.framework */; };
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
-		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
-		D2B86C3CBFD9DA41621B4A67 /* Pods_CGCircularCollectionView_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E6CDE011648558B5A802CFD /* Pods_CGCircularCollectionView_Tests.framework */; };
-		D51E2BD67060D47687900F46 /* Pods_CGCircularCollectionView_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C727A9177C4B7D4B051003 /* Pods_CGCircularCollectionView_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +36,9 @@
 
 /* Begin PBXFileReference section */
 		16563DDC7EFC0AA4D11A7DE4 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		24C727A9177C4B7D4B051003 /* Pods_CGCircularCollectionView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CGCircularCollectionView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5C357983050A5352DC5DB454 /* Pods-CGCircularCollectionView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CGCircularCollectionView_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-CGCircularCollectionView_Example/Pods-CGCircularCollectionView_Example.release.xcconfig"; sourceTree = "<group>"; };
+		2E199A211CC4ACC10030CDAD /* CGViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CGViewController.xib; sourceTree = "<group>"; };
+		2E199A231CC4B1C00030CDAD /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		3E389AC049680B5E038859CE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* CGCircularCollectionView_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CGCircularCollectionView_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,18 +53,14 @@
 		6003F5A6195388D20070C39A /* CGViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CGViewController.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6003F5AE195388D20070C39A /* CGCircularCollectionView_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CGCircularCollectionView_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6003F5B7195388D20070C39A /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
-		6CF1D9D7431F01047FE5D4C5 /* Pods-CGCircularCollectionView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CGCircularCollectionView_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CGCircularCollectionView_Tests/Pods-CGCircularCollectionView_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		8E6CDE011648558B5A802CFD /* Pods_CGCircularCollectionView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CGCircularCollectionView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A257EE1B3EF1CE90669C4971 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADAF83DA3B1F0987F7B08604 /* CGCircularCollectionView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CGCircularCollectionView.podspec; path = ../CGCircularCollectionView.podspec; sourceTree = "<group>"; };
-		BF57B3555F84F8D6E5C820E9 /* Pods-CGCircularCollectionView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CGCircularCollectionView_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CGCircularCollectionView_Tests/Pods-CGCircularCollectionView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		CB5983102145B16684F81D2B /* Pods-CGCircularCollectionView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CGCircularCollectionView_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CGCircularCollectionView_Example/Pods-CGCircularCollectionView_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		CC3C4D443BEAB1124CBF7ED6 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		F92DAD011D4293D4B84301A2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +71,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				D51E2BD67060D47687900F46 /* Pods_CGCircularCollectionView_Example.framework in Frameworks */,
+				44E3FBD5060BC1A4A73A2E91 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,10 +79,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				D2B86C3CBFD9DA41621B4A67 /* Pods_CGCircularCollectionView_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,9 +114,7 @@
 				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
-				6003F5AF195388D20070C39A /* XCTest.framework */,
-				24C727A9177C4B7D4B051003 /* Pods_CGCircularCollectionView_Example.framework */,
-				8E6CDE011648558B5A802CFD /* Pods_CGCircularCollectionView_Tests.framework */,
+				A257EE1B3EF1CE90669C4971 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -132,11 +124,12 @@
 			children = (
 				6003F59C195388D20070C39A /* CGAppDelegate.h */,
 				6003F59D195388D20070C39A /* CGAppDelegate.m */,
-				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* CGViewController.h */,
 				6003F5A6195388D20070C39A /* CGViewController.m */,
+				2E199A211CC4ACC10030CDAD /* CGViewController.xib */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
+				2E199A231CC4B1C00030CDAD /* Launch Screen.storyboard */,
 			);
 			name = "Example for CGCircularCollectionView";
 			path = CGCircularCollectionView;
@@ -185,10 +178,8 @@
 		F0C7464609791320D35E56B6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CB5983102145B16684F81D2B /* Pods-CGCircularCollectionView_Example.debug.xcconfig */,
-				5C357983050A5352DC5DB454 /* Pods-CGCircularCollectionView_Example.release.xcconfig */,
-				BF57B3555F84F8D6E5C820E9 /* Pods-CGCircularCollectionView_Tests.debug.xcconfig */,
-				6CF1D9D7431F01047FE5D4C5 /* Pods-CGCircularCollectionView_Tests.release.xcconfig */,
+				3E389AC049680B5E038859CE /* Pods.debug.xcconfig */,
+				F92DAD011D4293D4B84301A2 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -276,8 +267,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
+				2E199A221CC4ACC10030CDAD /* CGViewController.xib in Resources */,
+				2E199A241CC4B1C00030CDAD /* Launch Screen.storyboard in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,7 +327,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CGCircularCollectionView_Example/Pods-CGCircularCollectionView_Example-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		48487E33FE4CF76FD6409943 /* Copy Pods Resources */ = {
@@ -380,7 +372,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CGCircularCollectionView_Example/Pods-CGCircularCollectionView_Example-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -467,7 +459,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -500,7 +492,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -509,13 +501,13 @@
 		};
 		6003F5C0195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CB5983102145B16684F81D2B /* Pods-CGCircularCollectionView_Example.debug.xcconfig */;
+			baseConfigurationReference = 3E389AC049680B5E038859CE /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CGCircularCollectionView/CGCircularCollectionView-Prefix.pch";
 				INFOPLIST_FILE = "CGCircularCollectionView/CGCircularCollectionView-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -525,13 +517,13 @@
 		};
 		6003F5C1195388D20070C39A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5C357983050A5352DC5DB454 /* Pods-CGCircularCollectionView_Example.release.xcconfig */;
+			baseConfigurationReference = F92DAD011D4293D4B84301A2 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CGCircularCollectionView/CGCircularCollectionView-Prefix.pch";
 				INFOPLIST_FILE = "CGCircularCollectionView/CGCircularCollectionView-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -541,7 +533,6 @@
 		};
 		6003F5C3195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BF57B3555F84F8D6E5C820E9 /* Pods-CGCircularCollectionView_Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -565,7 +556,6 @@
 		};
 		6003F5C4195388D20070C39A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6CF1D9D7431F01047FE5D4C5 /* Pods-CGCircularCollectionView_Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -593,7 +583,7 @@
 				6003F5BE195388D20070C39A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "CGCircularCollectionView_Example" */ = {
 			isa = XCConfigurationList;
@@ -602,7 +592,7 @@
 				6003F5C1195388D20070C39A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		6003F5C2195388D20070C39A /* Build configuration list for PBXNativeTarget "CGCircularCollectionView_Tests" */ = {
 			isa = XCConfigurationList;
@@ -611,7 +601,7 @@
 				6003F5C4195388D20070C39A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
