@@ -140,6 +140,15 @@
 }
 
 - (void)recenterCell {
+    if (self.lastItemCount != self.itemCount) {
+        float lastContentOffsetWhenFullyScrolledRight = self.frame.size.width * _lastItemCount;
+        if (self.contentOffset.x >= lastContentOffsetWhenFullyScrolledRight) {
+            NSIndexPath *newIndexPath = [NSIndexPath indexPathForItem:_itemCount inSection:0];
+            [self scrollToItemAtIndexPath:newIndexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
+        }
+        _lastItemCount = _itemCount;
+        return;
+    }
     float contentOffsetWhenFullyScrolledRight = self.frame.size.width * (_itemCount + 1);
     if (self.contentOffset.x == contentOffsetWhenFullyScrolledRight) {
         NSIndexPath *newIndexPath = [NSIndexPath indexPathForItem:1 inSection:0];
