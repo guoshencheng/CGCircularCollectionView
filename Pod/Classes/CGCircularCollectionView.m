@@ -9,8 +9,6 @@
 #import "CGCircularCollectionView.h"
 #import "CGProtocolInterceptor.h"
 
-static NSUInteger const ContentMultiplier = 4;
-
 @interface CGCircularCollectionView ()
 
 @property (nonatomic) BOOL circularImplicitlyDisabled;
