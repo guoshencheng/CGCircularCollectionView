@@ -62,13 +62,9 @@ static NSUInteger const ContentMultiplier = 4;
     return self;
 }
 
-- (void)reloadData {
-    [super reloadData];
-}
-
 - (void)layoutSubviews {
     [super layoutSubviews];
-    [self recenterIfNecessary];
+    [self recenterCell];
 }
 
 #pragma mark - Accessors
@@ -110,7 +106,12 @@ static NSUInteger const ContentMultiplier = 4;
 }
 
 - (NSIndexPath *)normalizedIndexPath:(NSIndexPath *)indexPath {
-    return [NSIndexPath indexPathForItem:(_itemCount? indexPath.item % _itemCount : 0) inSection:indexPath.section];
+    if (indexPath.row > _itemCount - 1) {
+        return [NSIndexPath indexPathForItem:indexPath.row - _itemCount inSection:indexPath.section];
+    } else {
+        NSLog(@"index: %@", @(indexPath.row));
+        return indexPath;
+    }
 }
 
 #pragma mark - UICollectionViewDatasource Methods
@@ -123,7 +124,7 @@ static NSUInteger const ContentMultiplier = 4;
     NSParameterAssert([collectionView isKindOfClass:[CGCircularCollectionView class]]);
     self.itemCount = [_dataSourceInterceptor.receiver collectionView:collectionView numberOfItemsInSection:section];
     self.circularImplicitlyDisabled = [self disableCircularInternallyBasedOnContentSize];
-    return [self circularActive]? _itemCount * ContentMultiplier : _itemCount;
+    return [self circularActive]? _itemCount + 2 : _itemCount;
 }
 
 #pragma mark - UIScrollViewDelegate Methods
@@ -140,6 +141,17 @@ static NSUInteger const ContentMultiplier = 4;
     }
 }
 
+- (void)recenterCell {
+    float contentOffsetWhenFullyScrolledRight = self.frame.size.width * (_itemCount + 1);
+    if (self.contentOffset.x == contentOffsetWhenFullyScrolledRight) {
+        NSIndexPath *newIndexPath = [NSIndexPath indexPathForItem:1 inSection:0];
+        [self scrollToItemAtIndexPath:newIndexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
+    } else if (self.contentOffset.x == 0)  {
+        NSIndexPath *newIndexPath = [NSIndexPath indexPathForItem:(_itemCount) inSection:0];
+        [self scrollToItemAtIndexPath:newIndexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
+    }
+}
+
 #pragma mark - Private Methods
 
 - (void)commonCircularCollectionViewInit {
@@ -150,25 +162,6 @@ static NSUInteger const ContentMultiplier = 4;
     [super setDataSource:(id)_dataSourceInterceptor];
     self.showsHorizontalScrollIndicator = NO;
     self.showsVerticalScrollIndicator = NO;
-}
-
-- (void)recenterIfNecessary {
-    if ([self circularActive]) {
-        CGPoint currentOffset = self.contentOffset;
-        CGFloat singleContentWidth = self.contentSize.width / ContentMultiplier;
-        if (self.lastItemCount != _itemCount) {
-            NSInteger page = currentOffset.x / ([self collectionViewFlowLayout].itemSize.width * self.lastItemCount);
-            currentOffset.x = page * ([self collectionViewFlowLayout].itemSize.width * (self.itemCount - self.lastItemCount)) + currentOffset.x;
-            self.lastItemCount = _itemCount;
-        }
-        CGFloat contentCenteredX = (self.contentSize.width - self.bounds.size.width) / 2.0f;
-        CGFloat deltaFromCenter = currentOffset.x - contentCenteredX;
-        if (fabs(deltaFromCenter) >= singleContentWidth ) {
-            CGFloat correction = (deltaFromCenter > 0)? deltaFromCenter - singleContentWidth : deltaFromCenter + singleContentWidth;
-            currentOffset.x = contentCenteredX + correction;
-        }
-        self.contentOffset = currentOffset;
-    }
 }
 
 - (BOOL)disableCircularInternallyBasedOnContentSize {
