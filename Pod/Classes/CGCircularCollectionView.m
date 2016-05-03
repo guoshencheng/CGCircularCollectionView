@@ -104,10 +104,12 @@
 }
 
 - (NSIndexPath *)normalizedIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row > _itemCount - 1) {
-        return [NSIndexPath indexPathForItem:indexPath.row - _itemCount inSection:indexPath.section];
+    NSInteger diff = (_lastItemCount == 0) ? 0 : _itemCount - _lastItemCount;
+    NSInteger realRow = indexPath.row - diff;
+    if (realRow < 0) realRow = 0;
+    if (realRow > _itemCount - 1) {
+        return [NSIndexPath indexPathForItem:realRow - _itemCount inSection:indexPath.section];
     } else {
-        NSLog(@"index: %@", @(indexPath.row));
         return indexPath;
     }
 }

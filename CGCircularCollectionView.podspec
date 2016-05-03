@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "CGCircularCollectionView"
-  s.version          = "0.1.5"
+  s.version          = "0.1.6"
   s.summary          = "A circular collection"
 
 # This description is used to generate tags and improve search results.
