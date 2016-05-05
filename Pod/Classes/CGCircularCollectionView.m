@@ -60,11 +60,6 @@
     return self;
 }
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    [self recenterCell];
-}
-
 #pragma mark - Accessors
 
 - (void)setDataSource:(NSObject <UICollectionViewDataSource> *)dataSource {
@@ -103,6 +98,16 @@
     return !_explicitlyDisabled && !_circularImplicitlyDisabled;
 }
 
+- (NSIndexPath *)circularIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        return [NSIndexPath indexPathForRow:_itemCount inSection:indexPath.section];
+    } else if (indexPath.row >= _itemCount + 1) {
+        return [NSIndexPath indexPathForRow:1 inSection:indexPath.section];
+    } else {
+        return [NSIndexPath indexPathForRow:indexPath.row + 1 inSection:indexPath.section];
+    }
+}
+
 - (NSIndexPath *)normalizedIndexPath:(NSIndexPath *)indexPath {
     NSInteger diff = (_lastItemCount == 0) ? 0 : _itemCount - _lastItemCount;
     NSInteger realRow = indexPath.row - diff;
@@ -130,6 +135,7 @@
 #pragma mark - UIScrollViewDelegate Methods
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [self recenterCell];
     if (_shadowLayer.hidden == NO) {
         [CATransaction begin];
         [CATransaction setDisableActions:YES];
