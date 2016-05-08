@@ -104,7 +104,7 @@
     } else if (indexPath.row >= _itemCount + 1) {
         return [NSIndexPath indexPathForRow:1 inSection:indexPath.section];
     } else {
-        return [NSIndexPath indexPathForRow:indexPath.row + 1 inSection:indexPath.section];
+        return [NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section];
     }
 }
 
